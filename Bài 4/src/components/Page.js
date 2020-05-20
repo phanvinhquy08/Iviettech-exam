@@ -165,8 +165,12 @@ export default class Page extends Component {
     }
 
     onDeleteItem = (id) => {
-        const { carts } = this.state;
+        const { carts, products } = this.state;
         this.setState({
+            products: products.map(item => {
+                if(item.id === id) return {...item, count:0}
+                else return {...item}
+            }),
             carts: carts.filter(item => item.id !== id)
         })
     }
