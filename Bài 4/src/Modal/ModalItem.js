@@ -7,7 +7,7 @@ export default class ModalItem extends Component {
         return (
             <div className="modal-item">
                 <div className="modal-image">
-                    <img src={cart.img} />
+                    <img src={cart.img} alt={cart.id}/>
                 </div>
                 <div className="modal-content">
                     <h4 className="modal-name"> {cart.size + " | " + cart.name} </h4>

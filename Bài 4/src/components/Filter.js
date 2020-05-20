@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 
 import "./Filter.css"
-import { act } from 'react-dom/test-utils';
+
 
 export default class Filter extends Component {
     constructor() {

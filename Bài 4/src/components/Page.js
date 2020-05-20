@@ -147,7 +147,7 @@ export default class Page extends Component {
     }
 
     addToCart = (id) => {
-        let { products, size, carts } = this.state;
+        let { products, size } = this.state;
         if (!size) {
             alert("Please pick your size")
             return;
@@ -179,7 +179,7 @@ export default class Page extends Component {
     handleCloseModal = () => this.setState({ showModal: false });
     // MODAL
     render() {
-        const { productshow, carts, onDeleteItem } = this.state;
+        const { productshow, carts } = this.state;
         return (
             <>
                 <div className="container">
