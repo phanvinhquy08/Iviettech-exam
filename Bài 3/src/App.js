@@ -19,7 +19,6 @@ class App extends Component {
     super(props);
     this.state = {
       total: 0,
-      count: 0,
       foods: [
         { id: 0, name: "Cold cuts", price: 5, count: 0, img: img0 },
         { id: 1, name: "Pepperoni", price: 3.5, count: 0, img: img1 },
@@ -44,7 +43,6 @@ class App extends Component {
         else return { ...item }
       }),
       reset: false,
-      count: this.state.count + 1,
       foodsOrder: [...foodsOrder, { ...foods.find(item => item.id === id), stt: sttMax + 1 }]
     }, this.setTotal)
   }
@@ -57,12 +55,11 @@ class App extends Component {
     this.setState({
       foods: foods.map(item => {
         if (item.id === idFood) {
-          return { ...item, count: item.count - 1 }
+          return { ...item, count: item.count <= 0 ? 0 : item.count - 1 }
         }
         else return { ...item }
       }),
       reset: false,
-      count: this.state.count - 1,
       foodsOrder: [...foodsOrder.slice(0, max - 1), ...foodsOrder.slice(max)]
     }, this.setTotal)
   }

@@ -4,7 +4,7 @@ import { Button } from 'reactstrap';
 import Food from './Food';
 export default class ListFood extends Component {
     render() {
-        const { foods, total, count, setIncreaseCount, setDescreaseCount, reset, resetCount } = this.props;
+        const { foods, total, setIncreaseCount, setDescreaseCount, reset, resetCount } = this.props;
         return (
             <>
                 <div className="header">
@@ -21,7 +21,6 @@ export default class ListFood extends Component {
                     {foods.map((food, index) => <Food
                         key={index}
                         id={food.id}
-                        count={count}
                         name={food.name}
                         price={food.price}
                         count={food.count}

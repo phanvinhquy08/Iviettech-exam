@@ -1,0 +1,99 @@
+.products {
+    display: flex;
+    flex-wrap: wrap;
+    width: 80vw;
+}
+.products .card {
+    margin: 1rem;
+    text-align: center;
+    position: relative;
+}
+.products .card .ship {
+    position: absolute;
+    right: 10px;
+    top: 10px;
+    background-color: #363431;
+    color: #ffffff;
+    padding: 8px 16px;
+}
+.products .card:hover .btn-add{
+    background-color: #fcba03;
+}
+.products .card:hover img{
+    transform: scale(1.1);
+    transition: 0.9s;
+}
+.products .card .image {
+    overflow: hidden;
+    height: 450px;
+    margin-bottom: 20px;
+}
+.products .card:hover {
+    border: 0.1px solid #DDD;
+}
+.products .card img{
+    width: 300px;
+    margin-bottom: 20px;
+}
+.products .stick {
+    width: 24px;
+    height: 2px;
+    background-color: #fcba03;
+    display: inline-block;
+}
+.products .card .btn-add {
+    display: block;
+    width: 100%;
+    padding: 1rem;
+    border: none;
+    color: #ffffff;
+    background-color: #363431;
+    outline: none;
+    cursor: pointer;
+    font-size: large;
+    font-weight: bold;
+    transition: .5s;
+}
+.products .card .price {
+    font-size: larger;
+    margin: 20px 0;
+}
+.products .card .price h4{
+    margin: 5px 0;
+    color: #363431;
+}
+.products .card .price h2 {
+    display: inline;
+}
+.products .card .price span {
+    margin-right: 5px;
+    font-weight: bold;
+}
+.products .btn-group {
+    margin-top: 10px;
+}
+.products .btn-group .btn-size {
+    width: 30px;
+    height: 30px;
+    margin: 4px;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-transform: uppercase;
+    font-weight: bold;
+}
+.products .btn-group .btn-size:focus {
+    background-color: #363431;
+    color: #fff;
+}
+.order-by {
+    width: 100%;
+    display: flex;
+}
+.order-by h4 {
+    flex-grow: 1;
+}
+.order-by select {
+    margin-right: 120px;
+}
