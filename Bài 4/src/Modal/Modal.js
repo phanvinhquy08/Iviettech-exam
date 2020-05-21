@@ -32,7 +32,7 @@ export default class Modal extends React.Component {
           />))}
           <div className="modal-total-all">
             <h4 className="title">Total:</h4>
-            <h3>{"$ " + total}</h3>
+            <h3>{"$ " + total.toFixed(2)}</h3>
           </div>
           <div className="modal-btn-group">
             <div className="modal-btn-pay">
