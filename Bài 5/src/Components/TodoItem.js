@@ -3,7 +3,6 @@ import { Button } from 'reactstrap';
 
 const TodoItem = props => {
     const { editTodo, deleteTodo, todo } = props;
-
     return (
         <>
             <tr>
