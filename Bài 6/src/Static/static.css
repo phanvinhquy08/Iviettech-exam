@@ -1,0 +1,176 @@
+* {
+    margin: 0;
+    padding: 0;
+}
+
+.navigation {
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.6);
+    background: #049d4c;
+    display: flex;
+    align-items: center;
+    padding: 0 100px;
+}
+.navigation .logo {
+    font-family: 'Roboto Slab', serif;
+    color: #FFF;
+    margin-right: 16px;
+    flex-grow: 1;
+}
+.navigation nav ul {
+    display: flex;
+}
+.navigation nav ul {
+    list-style-type: none;
+}
+.navigation nav ul li{
+    padding: 24px 0;
+}
+.navigation nav ul li a {
+    text-decoration: none;
+    color: #FFF;
+    padding: 20px 10px;
+    position: relative;
+}
+.navigation nav ul li a:after {
+    background: #FFF;
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 0;
+    height: 2px;
+    transition: .3s;
+}
+.navigation nav ul li a:hover:after {
+    width: 100%;
+}
+.body {
+    padding: 16 0px;
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+}
+.body .dishes {
+    padding: 0 100px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+.card {
+    margin: 16px;
+    border-radius: 5px;
+    box-shadow: 0px 3px 3px -2px rgba(0,0,0,0.2), 0px 3px 4px 0px rgba(0,0,0,0.14), 0px 1px 8px 0px rgba(0,0,0,0.12);
+}
+.card .card-header {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
+.card .card-header .card-number {
+    background-color: #049d4c;
+    width: 40px;
+    height: 40px;
+    text-align: center;
+    line-height: 40px;
+    border-radius: 50%;
+    color: #FFF;
+    margin-right: 16px;
+}
+.card .card-image img {
+    width: 300px;
+    height: 200px;
+}
+.card .card-footer {
+    padding: 16px;
+    display: flex;
+    align-items: center;
+}
+.card .card-footer .btn {
+    flex-grow: 1;
+}
+.card .card-footer button {
+    background-color: #049d4c;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.6);
+    border-radius: 5px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+.card .card-footer i {
+    color: #049d4c;
+    padding: 16px;
+}
+.body .add {
+    margin: 0 auto;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.6);
+    padding: 32px;
+    min-height: 200px;
+    min-width: 300px;
+    border-radius: 5px;
+}
+.body .add .add-header {
+    height: 32px;
+    text-align: center;
+    line-height: 32px;
+    color: #049d4c;
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+.group-field{
+    position: relative;
+    margin-bottom: 40px;
+}
+.group-field .label-field {
+    position: absolute;
+    left: 0;
+    top: 0;
+    color: #DDD;
+    cursor: pointer;
+    transition: .3s;
+}
+.group-field .input-field {
+    width: 100%;
+    border-bottom: 1px solid #DDD;
+    border-top: none;
+    border-right: none;
+    border-left: none;
+    outline: none;
+    position: relative;
+}
+.group-field:after {
+    content: "";
+    position: absolute;
+    height: 2px;
+    width: 100%;
+    background-color: #049d4c;
+    top: 100%;
+    left: 0;
+}
+.group-field .input-field:focus.group-field::after {
+    width: 100%;
+}
+
+.group-field .input-field:valid ~ .label-field, 
+.group-field .input-field:focus ~ .label-field {
+    color: #049d4c;
+    top: -16px;
+    font-size: 0.8rem; 
+}
+button {
+    background-color: #049d4c;
+    padding: 8px 20px;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    box-shadow: 0 1px 3px 0 rgba(0,0,0,.1),0 1px 2px 0 rgba(0,0,0,.6);
+    border-radius: 5px;
+    color: #FFF;
+    text-transform: uppercase;
+}
+.search .group-field {
+    margin: 40px 200px;
+    min-width: 500px;
+}

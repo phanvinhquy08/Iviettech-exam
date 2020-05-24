@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { Table, Alert } from 'reactstrap';
+import { Table, ToastBody, Toast } from 'reactstrap';
 
 import TodoItem from './TodoItem';
 
@@ -31,8 +31,8 @@ const Todolist = props => {
 
     return (
         <>
-            {isAdd && <Alert color="primary">Thêm mới thành công</Alert>}
-            {isDelete && <Alert color="danger">Xóa thành công</Alert>}
+            {isAdd && <Toast><ToastBody color="primary">Thêm mới thành công</ToastBody></Toast>}
+            {isDelete && <ToastBody color="danger">Xóa thành công</ToastBody>}
             <Table dark>
                 <thead>
                     <tr>
