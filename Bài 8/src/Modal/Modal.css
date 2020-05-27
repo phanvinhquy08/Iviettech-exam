@@ -1,0 +1,80 @@
+.blur {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: grid;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.3);
+    overflow-x: hidden;
+    overflow-x: auto;
+}
+
+.blur .modal-container {
+    padding: 20px;
+    background-color: #FFF;
+    display: inline-block;
+    position: relative;
+    justify-self: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0,0,0,0.23);
+    min-width: 400px;
+    border-radius: 8px;
+}
+.blur h3 {
+    text-align: center;
+    font-size: 32px;
+    font-weight: bolder;
+}
+
+.blur .modal-container .modal-item {
+    display: flex;
+    align-items: center;
+    border-bottom: 1px solid #666;
+    padding: 16px;
+    background-color: #222;
+    color: #fcba03;
+    border-top: 3px solid #fcba03;
+}
+
+.blur .modal-container .modal-item .modal-content {
+    flex-grow: 1;
+}
+.blur .modal-container .modal-item .modal-image {
+    margin-right: 16px;
+}
+
+.blur .modal-container .modal-item .modal-image img{
+    width: 70px;
+}
+.blur .modal-total-all {
+    display: flex;
+    margin: 16px 0;
+    padding: 16px;
+    border-radius: 10px;
+    background-color: #222;
+    color: #fcba03;
+    align-items: center;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0,0,0,0.23);
+}
+.blur .modal-total-all .title {
+    flex-grow: 1;
+}
+.blur .modal-btn-group .modal-btn-pay {
+    width: 100%;
+}
+.blur .modal-btn-group .modal-btn-pay button{
+    width: 49%;
+    display: inline-block;
+    padding: 8px;
+    font-size: 32px;
+    color: #fcba03;
+    background-color: #222;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    border-radius: 8px;
+    margin-right: 3px;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.16), 0 3px 6px rgba(0,0,0,0.23);
+}

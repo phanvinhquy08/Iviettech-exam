@@ -1,0 +1,91 @@
+.side-bar {
+    width: 450px;
+    height: 100vh;
+    position: fixed;
+    right: -482px;
+    top: 0;
+    background: #363431;
+    z-index: 2;
+    transition: 0.5s;
+    font-weight: bold;
+    opacity: 0.97;
+    padding: 16px;
+    overflow-x: hidden;
+    overflow-x: auto;
+}
+
+.side-bar.show {
+    right: 0;
+}
+
+.side-bar .cart-button {
+    width: 418px;
+    height: 10%;
+    background-color: #363431;
+    position: relative;
+    padding: 1rem;
+    border-bottom: 1px solid #222;
+}
+
+.side-bar .cart-button i {
+    position: fixed;
+    right: 10px;
+    top: 10px;
+    color: #FFF;
+    transition: .3s;
+    background-color: #363431;
+    padding: 10px;
+}
+
+.side-bar .cart-button i.show {
+    position: absolute;
+    right: 209px;
+    top: 10px;
+    color: #FFF;
+}
+
+.side-bar .cart-button span {
+    position: fixed;
+    right: 5px;
+    top: 5px;
+    color: black;
+    background-color: #fcba03;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    border-radius: 50%;
+    transition: .3s;
+}
+
+.side-bar .cart-button span.show {
+    position: absolute;
+    right: 210px;
+    top: 5px;
+}
+.side-bar .subtotal {
+    display: flex;
+    padding: 16px;
+    font-weight: bold;
+    align-items: center;
+}
+.side-bar .subtotal #subtotal {
+    flex-grow: 1;
+    color: #AAA;
+}
+.side-bar .subtotal h2 {
+    color: #fcba03;
+}
+.side-bar .check-out {
+    padding: 16px;
+}
+.side-bar .check-out button{
+    width: 100%;
+    padding: 16px;
+    background-color: #222;
+    color: #FFF;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    font-size: 16px;
+    font-weight: bold;
+}
