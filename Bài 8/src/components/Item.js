@@ -1,9 +1,22 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
-import "./Item.css"
-export default class Item extends Component {
+import "./Item.css";
+import * as act from '../action/action';
+
+class Item extends Component {
+    onDeleteItem = (id) => {
+        const { carts, productshow, onDeleteItem } = this.props;
+        const products = productshow.map(item => {
+            if(item.id === id) return {...item, count:0}
+            else return {...item}
+        })
+        const cartshow = carts.filter(item => item.id !== id)
+        onDeleteItem(products, cartshow)
+    }
+    
     render() {
-        const { cart, onDeleteItem } = this.props;
+        const { cart } = this.props;
         const total = cart.count * cart.price;
         return (
             <div className="item" >
@@ -15,8 +28,20 @@ export default class Item extends Component {
                 <div className="price">
                     <h4>{"$ " + total.toFixed(2)}</h4>
                 </div>
-                <i className="fas fa-times" onClick={() => onDeleteItem(cart.id)}></i>
+                <i className="fas fa-times" onClick={() => this.onDeleteItem(cart.id)}></i>
             </div>
         )
     }
 }
+const mapStateToProps = (state) => ({
+    carts: state.carts,
+    productshow: state.productshow
+})
+
+const mapDispatchToProps = dispatch => ({
+    onDeleteItem: (products, cartshow) => {
+        dispatch(act.onDeleteItem(products, cartshow))
+    }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Item)

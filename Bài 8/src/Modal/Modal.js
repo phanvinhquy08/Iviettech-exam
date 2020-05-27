@@ -1,11 +1,14 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
+import { connect } from 'react-redux';
+
 import "./Modal.css"
 import ModalItem from './ModalItem';
+import * as act from '../action/action';
 
 const modalRoot = document.getElementById('modal-root');
 
-export default class Modal extends React.Component {
+class Modal extends React.Component {
   el = document.createElement('div')
   componentDidMount() {
     modalRoot.appendChild(this.el)
@@ -14,13 +17,13 @@ export default class Modal extends React.Component {
     modalRoot.removeChild(this.el)
   }
   render() {
-    const { carts, onClose } = this.props;
+    const { carts, offModal } = this.props;
     console.log(carts)
     const total = carts.reduce((sum, item) => sum + item.price * item.count, 0)
     return ReactDOM.createPortal(
       <div
         className="blur"
-        onClick={onClose}
+        onClick={offModal}
       >
         <div
           className="modal-container"
@@ -46,3 +49,14 @@ export default class Modal extends React.Component {
     )
   }
 }
+const mapStateToProps = (state) => ({
+  carts: state.carts
+})
+
+const mapDispatchToProps = dispatch => ({
+  offModal: () => {
+    dispatch(act.offModal())
+  }
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Modal)

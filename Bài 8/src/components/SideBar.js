@@ -1,8 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
 import Item from './Item';
-import "./SideBar.css"
-export default class SideBar extends Component {
+import "./SideBar.css";
+import * as act from '../action/action';
+
+class SideBar extends Component {
     constructor() {
         super();
         this.state = {
@@ -16,13 +19,16 @@ export default class SideBar extends Component {
     }
 
     handleCheckOut = () => {
-        const { handleShowMessageClick } = this.props;
-        handleShowMessageClick();
-        this.setState({show: false})
+        const { showModal } = this.props;
+        showModal();
     }
 
+    onDeleteItem = (params) => {
+        
+    }
+    
     render() {
-        const { carts, onDeleteItem } = this.props;
+        const { carts } = this.props;
         const { show } = this.state;
         const subtotal = carts.reduce((sum, item) => sum + item.price * item.count, 0)
         const totalProduct = carts.reduce((sum, item) => sum + item.count, 0)
@@ -36,7 +42,7 @@ export default class SideBar extends Component {
                     {carts.map((item, index) => (<Item
                         key={index}
                         cart={item}
-                        onDeleteItem={onDeleteItem}
+                        onDeleteItem={this.onDeleteItem}
                     />))}
                 </div>
                 <div className="subtotal">
@@ -50,3 +56,15 @@ export default class SideBar extends Component {
         )
     }
 }
+
+const mapStateToProps = (state) => ({
+    carts: state.carts
+})
+
+const mapDispatchToProps = dispatch => ({
+    showModal: () => {
+        dispatch(act.showModal())
+    }  
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(SideBar)

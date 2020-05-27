@@ -1,9 +1,11 @@
 import React, { Component } from 'react'
+import { connect } from 'react-redux';
 
-import "./Filter.css"
+import "./Filter.css";
+import * as act from '../action/action';
 
 
-export default class Filter extends Component {
+class Filter extends Component {
     constructor() {
         super();
         this.state = {
@@ -18,6 +20,26 @@ export default class Filter extends Component {
             }
         }
     }
+
+    onFilter = (arr) => {
+        const { products, onFilter } = this.props;
+        let newProducts = [];
+        for (let item of arr) {
+            for (let product of products) {
+                if (product.sizeList.map(x => x.toUpperCase()).includes(item)) {
+                    newProducts.push(product)
+                    newProducts = [...new Set(newProducts)];
+                }
+            }
+        }
+        if (newProducts.length < 1) {
+            onFilter(products)
+        }
+        else {
+            onFilter(newProducts)
+        }
+    }
+
     onChangeActive = (e) => {
         const { active } = this.state;
         const { onFilter } = this.props;
@@ -31,7 +53,7 @@ export default class Filter extends Component {
                     arrFilter.push(key)
                 }
             } 
-            onFilter(arrFilter)
+            this.onFilter(arrFilter)
         })
     }
     render() {
@@ -55,3 +77,14 @@ export default class Filter extends Component {
         )
     }
 }
+const mapStateToProps = (state) => ({
+    products: state.products
+})
+
+const mapDispatchToProps = dispatch => ({
+    onFilter: (products) => {
+        dispatch(act.onFilter(products))
+    }  
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Filter)
