@@ -6,37 +6,32 @@ import "./Products.css";
 import * as act from '../action/action';
 
 class Products extends Component {
+
     componentDidMount() {
-        const { getAllProduct } = this.props;
-        getAllProduct();
+        const { getAllProducts } = this.props;
+        getAllProducts();
     }
     onChange = (e) => {
-        const { onSort, productshow } = this.props
-        if (e.target.value === 'asc') {
-            onSort(productshow.sort((x, y) => x.price - y.price))
-            console.log(productshow)
-        }
-        if (e.target.value === 'des') {
-            onSort(productshow.sort((x, y) => y.price - x.price))
-            console.log(productshow)
-        }
+        const { sortPrice } = this.props
+        sortPrice(e.target.value)
     }
 
     render() {
-        const { productshow } = this.props;
+        const { products, loading } = this.props;
         return (
             <div>
                 <div className="order-by">
-                    <h4 style={{ marginLeft: "16px" }}>{productshow.length + " Product(s) found"}</h4>
+                    <h4 style={{ marginLeft: "16px" }}>{products.length + " Product(s) found"}</h4>
                     <h5>Order By :</h5>
                     <select id="cars" onChange={this.onChange}>
                         <option>select</option>
-                        <option value="des">Highest to Lowest</option>
+                        <option value="desc">Highest to Lowest</option>
                         <option value="asc">Lowest to Highest</option>
                     </select>
                 </div>
                 <div className="products">
-                    {productshow.map((product, index) => (
+                    {loading && <div className="loader"></div>}
+                    {products.map((product, index) => (
                         <Card
                             key={index}
                             product={product}
@@ -48,15 +43,16 @@ class Products extends Component {
     }
 }
 const mapStateToProps = (state) => ({
-    productshow: state.productshow
+    products: state.products,
+    loading: state.loading
 })
 
 const mapDispatchToProps = dispatch => ({
-    getAllProduct: () => {
-        dispatch(act.getAllProduct())
+    getAllProducts: () => {
+        dispatch(act.getAllProducts())
     },
-    onSort: (arr) => {
-        dispatch(act.onSort(arr))
+    sortPrice: (sort) => {
+        dispatch(act.sortPrice(sort))
     }
 })
 

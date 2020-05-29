@@ -1,0 +1,34 @@
+.item {
+    position: relative;
+    display: flex;
+    align-items: center;
+    color: white;
+    border-bottom: 1px solid #222;
+    padding: 16px;
+}
+
+.item img {
+    width: 70px;
+    margin-right: 16px;
+}
+.item .cart-content {
+    flex-grow: 1;
+}
+.item .cart-content .quantity {
+    color: #AAA;
+}
+.item .price {
+    color:#fcba03;
+}
+.item i {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    cursor: pointer;
+}
+.item:hover {
+    background-color: #222;
+}
+.item i:hover h4{
+    text-decoration: line-through;
+}

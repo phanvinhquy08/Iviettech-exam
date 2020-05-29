@@ -8,7 +8,7 @@ import './App.css';
 import Todolist from './Components/Todolist';
 import FormCreate from './Components/FormCreate';
 import FormSearch from './Components/FormSearch';
-import { render } from '@testing-library/react';
+
 
 class App extends Component {
 
@@ -19,18 +19,14 @@ class App extends Component {
         <Container>
           <Row>
             <Col sm={6}>
-              <FormCreate
-
-              />
+              <FormCreate />
             </Col>
             {/* <Col sm={6}>
               <FormSearch
               />
             </Col> */}
           </Row>
-          <Todolist
-
-          />
+          <Todolist />
         </Container>
       </div>
     );

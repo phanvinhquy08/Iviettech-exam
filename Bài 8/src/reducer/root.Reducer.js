@@ -95,7 +95,8 @@ export default (state = initialState, action) => {
         case type.GET_ALL_PRODUCT: 
             return {...state, productshow: state.products}
         case type.SORT_PRODUCT:
-            return {...state, productshow: action.productshow}
+            console.log("SORT_PRODUCT")
+            return {...state, productshow: [...action.productshow]}
         case type.CHOOSE_SIZE: 
             return {...state, size: action.size}
         case type.ADD_TO_CART: 

@@ -7,6 +7,7 @@ import { connect } from 'react-redux';
 class TodoItem extends Component {
     handleDelete = (id) => {
         const { deleteTodo } = this.props;
+        getOneTodo(id);
         deleteTodo(id)
     }
     getOneTodo = id => {
@@ -49,7 +50,8 @@ const mapDispatchToProps = dispatch => ({
     },
     setTodo : (todo) => {
         dispatch(todoListAction.setTodo(todo))
-    }
+    },
+    
 })
 
 export default connect(mapStateToProps,mapDispatchToProps)(TodoItem) 

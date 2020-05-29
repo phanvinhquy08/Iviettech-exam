@@ -1,0 +1,33 @@
+.filter {
+    width: 20vw;
+    margin-left: 1rem;
+}
+
+.filter h4 {
+    font-weight: bold;
+    font-size: larger;
+}
+
+.filter button {
+    margin: 6px;
+    height: 45px;
+    width: 45px;
+    text-align: center;
+    border-radius: 50%;
+    border: none;
+    outline: none;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.filter button.active {
+    background-color: #363431;
+    color: #FFF;
+}
+
+.filter .content {
+    margin-top: 20px;
+    text-align: center;
+    font-weight: bold;
+    color: #AAA;
+}
