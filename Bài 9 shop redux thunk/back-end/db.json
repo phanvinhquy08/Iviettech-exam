@@ -135,5 +135,12 @@
       "count": 1,
       "id": 4
     }
+  ],
+  "users": [
+    {
+      "email": "olivier@mail.com",
+      "password": "$2a$10$6qIkZEzE30i9m0a8TrMNfOsxIP1UoRHLNUidC.HOguvrDAM3PwmFm",
+      "id": 1
+    }
   ]
 }
